@@ -10,8 +10,11 @@ class LonginusBot(discord.Client):
             return
 
         if 'sum sanctus' in message.content.lower():
+            await message.channel.send('%s SUM SANCTUS!' % message.author.mention)
+
+        if 'dark prophet, guide me' in message.content.lower():
             quote = random.choice([line.rstrip('\n') for line in open('sumsanctus.txt')])
-            await message.channel.send('%s __**SUM SANCTUS!**__\r||```%s```||' % (message.author.mention, quote))
+            await message.channel.send('%s SUM SANCTUS!\r||```%s```||' % (message.author.mention, quote))
 
 
 client = LonginusBot()
